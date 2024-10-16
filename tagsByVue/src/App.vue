@@ -6,7 +6,17 @@
     const data = ref('');
 
     function handleAdd(){       
+        isShowPopup.value = true;
+    }
+
+    function clickToAdd(){
         languages.value.push(data.value);
+        data.value = '';
+        isShowPopup.value = false;
+    }
+
+    function clickToCancel(){
+        isShowPopup.value = false;
         data.value = '';
     }
 
@@ -36,7 +46,6 @@
 
 <template>
     <div class="container">
-        <button @click="handleClick">Click me</button>
 <!-- popup -->
 <div class="popup-container" v-if="isShowPopup ===true" @click="handleClosePopup">
       <div class="popup-main" @click.stop="handleClickMain">
@@ -45,11 +54,11 @@
         </div>
 
         <div class="popup-content">
-          Are you sure you want to delete this item?
+          Are you sure to add this item?
         </div>
         <div class="popup-action">
-          <button>Cancel</button>
-          <button>Confirm</button>
+          <button @click="clickToCancel">Cancel</button>
+          <button @click="clickToAdd">Confirm</button>
         </div>
       </div>
      </div>
