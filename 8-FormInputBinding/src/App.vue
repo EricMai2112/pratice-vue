@@ -19,7 +19,8 @@
         <textarea name="" id="" v-model="textArea"></textarea><br>
         <p>{{ textArea }}</p>
 
-        <input v-model="text" placeholder="Type your message here">
+        <input v-model.lazy="text" placeholder="Type your message here">
+        <!-- add .lazy to prevent calling api continously -->
         <p>Message: {{ text }}</p> 
 
         <h1>Your favourite sports: {{ sports }}</h1>
