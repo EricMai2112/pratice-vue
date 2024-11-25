@@ -31,17 +31,17 @@
         <label for="sport3">Volleyball</label>
 
         <h1>Gender: {{ genders }}</h1>
-        <input type="radio" v-model="genders" id="genderFemale" value="Female">
+        <input type="radio" v-model="genders" id="genderFemale" value="0">
         <label for="genderFemale">Female</label>
-        <input type="radio" v-model="genders" id="genderMale" value="Male">
+        <input type="radio" v-model="genders" id="genderMale" value="1">
         <label for="genderMale">Male</label>
 
         <h1>Choose class that you want to join: {{ classes }}</h1>
         <select v-model="classes">
             <option disabled>please choose class</option>
-            <option>A</option>
-            <option>B</option>
-            <option>C</option>
+            <option :value="{Type: 'Food', Name: 'Chicken'}">A</option>
+            <option :value="{Type: 'Drink', Name: 'Cocacola'}">B</option>
+            <option :value="{Type: 'Dessert', Name: 'Cake'}">C</option>
         </select>
     </div>
 </template>
